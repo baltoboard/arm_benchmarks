@@ -17,7 +17,7 @@ C_DEPS += \
 %.o: ../%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM Sourcery Linux GCC C Compiler'
-	arm-none-linux-gnueabi-gcc -DUNROLL -DSP -O2 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -mcpu=cortex-a8 -g3 -gdwarf-2 -o"$@" "$<"
+	$(CSTOOL_PREFIX)gcc -DUNROLL -DSP -O2 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -mcpu=cortex-a8 -g3 -gdwarf-2 -o"$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
