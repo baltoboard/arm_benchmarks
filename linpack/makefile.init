@@ -1,0 +1,7 @@
+-include ../../../../Rules.make
+
+CSTOOL_PREFIX ?=  
+
+#ifeq("$(CSTOOL_PREFIX)", "")
+#	@echo "missing toolchain path"
+#endif
