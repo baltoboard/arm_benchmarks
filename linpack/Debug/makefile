@@ -34,7 +34,7 @@ all: linpack.elf secondary-outputs
 linpack.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Sourcery Linux GCC C Linker'
-	$(CSTOOL_PREFIX)gcc -Wl,-Map,linpack.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"linpack.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	$(CROSS_COMPILE)gcc -Wl,-Map,linpack.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"linpack.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

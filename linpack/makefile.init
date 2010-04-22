@@ -1,3 +1,7 @@
 -include ../../../../Rules.make
 
-CROSS_COMPILE ?=  
+CROSS_COMPILE ?= test 
+
+#ifeq("$(CROSS_COMPILE)", "")
+#	@echo "missing toolchain path"
+#endif
