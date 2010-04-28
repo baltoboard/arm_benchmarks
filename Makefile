@@ -20,7 +20,7 @@ clean:
 	done
 	@rm -f `find . -name "*.map"`
 
-install:
+install: all
 	@install -d $(DESTDIR)/usr/bin
 	@if [ -e dhrystone/Debug/dhrystone ] ; then \
 		install dhrystone/Debug/dhrystone $(DESTDIR)/usr/bin/ ; \
