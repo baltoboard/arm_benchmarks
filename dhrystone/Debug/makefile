@@ -28,19 +28,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: dhrystone.elf secondary-outputs
+all: dhrystone secondary-outputs
 
 # Tool invocations
-dhrystone.elf: $(OBJS) $(USER_OBJS)
+dhrystone: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Sourcery Linux GCC C Linker'
-	$(CROSS_COMPILE)gcc -Wl,-Map,dhrystone.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"dhrystone.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	$(CROSS_COMPILE)gcc -Wl,-Map,dhrystone.map -mcpu=cortex-a8 -o"dhrystone" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EXECUTABLES)$(S_UPPER_DEPS) dhrystone.elf
+	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EXECUTABLES)$(S_UPPER_DEPS) dhrystone
 	-@echo ' '
 
 secondary-outputs:
