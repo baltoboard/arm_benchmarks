@@ -1,0 +1,7 @@
+DIRS :=
+
+DIRS := dhrystone
+DIRS += whetstone
+DIRS += linpack
+
+DESTDIR=/home/jlance/omap3/omap3evm_nfs_qt/
