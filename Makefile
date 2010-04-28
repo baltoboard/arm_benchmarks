@@ -30,6 +30,7 @@ clean:
 	@echo   Cleaning whetstone
 	@echo ======================
 	@cd whetstone/Debug; make clean; cd ..
+	@rm -f `find . -name "*.map"`
 
 install:
 	@echo ======================
