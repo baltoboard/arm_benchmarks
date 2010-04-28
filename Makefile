@@ -1,51 +1,52 @@
+-include DIRS
 -include ../../Rules.make
 
-.PHONY: all clean
+all: debug release
 
-#All Target
-all:
-	@echo ======================
-	@echo   Building dhrystone 
-	@echo ======================
-	@cd dhrystone/Debug; make; cd ..
-	@echo ====================
-	@echo   Building linpack
-	@echo ====================
-	@cd linpack/Debug; make; cd ..
-	@echo ======================
-	@echo   Building whetstone
-	@echo ======================
-	@cd whetstone/Debug; make; cd ..
+debug:
+	for dir in $(DIRS); do \
+                make -C $$dir/Debug; \
+        done
+
+release:
+	for dir in $(DIRS); do \
+                make -C $$dir/Release; \
+	done
 
 clean:
-	@echo ======================
-	@echo   Cleaning dhrystone
-	@echo ======================
-	@cd dhrystone/Debug; make clean; cd ..
-	@echo ====================
-	@echo   Cleaning linpack
-	@echo ====================
-	@cd linpack/Debug; make clean; cd ..
-	@echo ======================
-	@echo   Cleaning whetstone
-	@echo ======================
-	@cd whetstone/Debug; make clean; cd ..
+	for dir in $(DIRS); do \
+                make -C $$dir/Release clean; \
+                make -C $$dir/Debug clean; \
+	done
 	@rm -f `find . -name "*.map"`
 
 install:
-	@echo ======================
-	@echo  Installing dhrystone
-	@echo ======================
-	@cp dhrystone/Debug/dhrystone.elf $(DESTDIR)/usr/bin/dhrystone
-	@echo ====================
-	@echo  Installing linpack
-	@echo ====================
-	@cp linpack/Debug/linpack.elf $(DESTDIR)/usr/bin/linpack
-	@echo ======================
-	@echo  Installing whetstone
-	@echo ======================
-	@cp whetstone/Debug/whetstone.elf $(DESTDIR)/usr/bin/whetstone
-	@echo ======================
-	@echo   Installing scripts
-	@echo ======================
-	@cp scripts/* $(DESTDIR)/usr/bin/
+	@if [ -e dhrystone/Debug/dhrystone ] ; then \
+		cp dhrystone/Debug/dhrystone $(DESTDIR)/usr/bin/ ; \
+	else \
+		if [ -e dhrystone/Release/dhrystone ] ; then \
+			cp dhrystone/Release/dhrystone $(DESTDIR)/usr/bin/ ; \
+		else \
+			echo "Nothing found to install!" ; \
+		fi \
+	fi
+	@if [ -e whetstone/Debug/whetstone ] ; then \
+		cp whetstone/Debug/whetstone $(DESTDIR)/usr/bin/ ; \
+	else \
+		if [ -e whetstone/Release/whetstone ] ; then \
+			cp whetstone/Release/whetstone $(DESTDIR)/usr/bin/ ; \
+		else \
+			echo "Nothing found to install!" ; \
+		fi \
+	fi
+	@if [ -e linpack/Debug/linpack ] ; then \
+		cp linpack/Debug/linpack $(DESTDIR)/usr/bin/ ; \
+	else \
+		if [ -e linpack/Release/linpack ] ; then \
+			cp linpack/Release/linpack $(DESTDIR)/usr/bin/ ; \
+		else \
+			echo "Nothing found to install!" ; \
+		fi \
+	fi
+
+	@cp scripts/* $(DESTDIR)/usr/bin
