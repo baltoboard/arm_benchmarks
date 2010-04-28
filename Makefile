@@ -5,7 +5,7 @@
 #All Target
 all:
 	@echo ======================
-	@echo   Building dhrystone
+	@echo   Building dhrystone 
 	@echo ======================
 	@cd dhrystone/Debug; make; cd ..
 	@echo ====================
