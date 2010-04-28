@@ -28,19 +28,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: whetstone.elf secondary-outputs
+all: whetstone secondary-outputs
 
 # Tool invocations
-whetstone.elf: $(OBJS) $(USER_OBJS)
+whetstone: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Sourcery Linux GCC C Linker'
-	$(CROSS_COMPILE)gcc -Wl,-Map,whetstone.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"whetstone.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	$(CROSS_COMPILE)gcc -Wl,-Map,whetstone.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"whetstone" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EXECUTABLES)$(S_UPPER_DEPS) whetstone.elf
+	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EXECUTABLES)$(S_UPPER_DEPS) whetstone
 	-@echo ' '
 
 secondary-outputs:
