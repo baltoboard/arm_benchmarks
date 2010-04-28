@@ -1,3 +1,5 @@
+-include ../../Rules.make
+
 .PHONY: all clean
 
 #All Target
@@ -28,3 +30,21 @@ clean:
 	@echo   Cleaning whetstone
 	@echo ======================
 	@cd whetstone/Debug; make clean; cd ..
+
+install:
+	@echo ======================
+	@echo  Installing dhrystone
+	@echo ======================
+	@cp dhrystone/Debug/dhrystone.elf $(DESTDIR)/usr/bin/dhrystone
+	@echo ====================
+	@echo  Installing linpack
+	@echo ====================
+	@cp linpack/Debug/linpack.elf $(DESTDIR)/usr/bin/linpack
+	@echo ======================
+	@echo  Installing whetstone
+	@echo ======================
+	@cp whetstone/Debug/whetstone.elf $(DESTDIR)/usr/bin/whetstone
+	@echo ======================
+	@echo   Installing scripts
+	@echo ======================
+	@cp scripts/* $(DESTDIR)/usr/bin/

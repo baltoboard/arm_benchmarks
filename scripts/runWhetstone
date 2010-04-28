@@ -1,0 +1,7 @@
+echo ""
+echo ""
+echo ""
+echo "Whetstone running ..."
+echo ""
+echo "Execution time approx 10 seconds"
+./bin/whetstone 10000
