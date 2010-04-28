@@ -28,19 +28,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: linpack.elf secondary-outputs
+all: linpack secondary-outputs
 
 # Tool invocations
-linpack.elf: $(OBJS) $(USER_OBJS)
+linpack: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Sourcery Linux GCC C Linker'
-	$(CROSS_COMPILE)gcc -Wl,-Map,linpack.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"linpack.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	$(CROSS_COMPILE)gcc -Wl,-Map,linpack.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"linpack" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EXECUTABLES)$(S_UPPER_DEPS) linpack.elf
+	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EXECUTABLES)$(S_UPPER_DEPS) linpack
 	-@echo ' '
 
 secondary-outputs:
