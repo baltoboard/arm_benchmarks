@@ -21,32 +21,32 @@ clean:
 	@rm -f `find . -name "*.map"`
 
 install:
+	@install -d $(DESTDIR)/usr/bin
 	@if [ -e dhrystone/Debug/dhrystone ] ; then \
-		cp dhrystone/Debug/dhrystone $(DESTDIR)/usr/bin/ ; \
+		install dhrystone/Debug/dhrystone $(DESTDIR)/usr/bin/ ; \
 	else \
 		if [ -e dhrystone/Release/dhrystone ] ; then \
-			cp dhrystone/Release/dhrystone $(DESTDIR)/usr/bin/ ; \
+			install dhrystone/Release/dhrystone $(DESTDIR)/usr/bin/ ; \
 		else \
 			echo "Nothing found to install!" ; \
 		fi \
 	fi
 	@if [ -e whetstone/Debug/whetstone ] ; then \
-		cp whetstone/Debug/whetstone $(DESTDIR)/usr/bin/ ; \
+		install whetstone/Debug/whetstone $(DESTDIR)/usr/bin/ ; \
 	else \
 		if [ -e whetstone/Release/whetstone ] ; then \
-			cp whetstone/Release/whetstone $(DESTDIR)/usr/bin/ ; \
+			install whetstone/Release/whetstone $(DESTDIR)/usr/bin/ ; \
 		else \
 			echo "Nothing found to install!" ; \
 		fi \
 	fi
 	@if [ -e linpack/Debug/linpack ] ; then \
-		cp linpack/Debug/linpack $(DESTDIR)/usr/bin/ ; \
+		install linpack/Debug/linpack $(DESTDIR)/usr/bin/ ; \
 	else \
 		if [ -e linpack/Release/linpack ] ; then \
-			cp linpack/Release/linpack $(DESTDIR)/usr/bin/ ; \
+			install linpack/Release/linpack $(DESTDIR)/usr/bin/ ; \
 		else \
 			echo "Nothing found to install!" ; \
 		fi \
 	fi
-
-	@cp scripts/* $(DESTDIR)/usr/bin
+	@install scripts/* $(DESTDIR)/usr/bin
