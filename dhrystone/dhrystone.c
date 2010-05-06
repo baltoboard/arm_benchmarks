@@ -67,10 +67,12 @@ long            Begin_Time,
 float           Microseconds,
                 Dhrystones_Per_Second;
 
+int             i;
+int             CpuFreq=0; // in KHz 
 /* end of variables for time measurement */
 
 
-main ()
+main (int argc, char **argv)
 /*****/
 
   /* main program, corresponds to procedures        */
@@ -118,15 +120,26 @@ main ()
     printf ("Program compiled without 'register' attribute\n");
     printf ("\n");
   }
-/*
-  printf ("Please give the number of runs through the benchmark: ");
+
+  if(argc == 1)
   {
-    int n;
-    scanf ("%d", &n);
-    Number_Of_Runs = n;
+    printf ("Please give the number of runs through the benchmark: ");
+    {
+      int n;
+      scanf ("%d", &n);
+      Number_Of_Runs = n;
+    }
   }
-*/
-  Number_Of_Runs = 10000000;
+  else
+  {
+    Number_Of_Runs = atoi(argv[1]);
+    printf("number of runs = %d",Number_Of_Runs);
+  }
+  if(argc == 3)
+  {
+    CpuFreq = atoi(argv[2])/1000;
+  }
+ 
   printf ("\n");
 
   printf ("Execution starts, %d runs through Dhrystone\n", Number_Of_Runs);
@@ -285,6 +298,11 @@ main ()
     printf ("Dhrystones per Second:                      ");
     printf ("%6.1f \n", Dhrystones_Per_Second);
     printf ("\n");
+    if(CpuFreq !=0)
+    {
+      printf ("CPU clock = %d MHz\n", CpuFreq);
+      printf ("Dhrystone DMIPS/MHz = %6.1f\n", (float)Dhrystones_Per_Second / (float)1757 / (float) CpuFreq);
+    }
   }
   
 }
