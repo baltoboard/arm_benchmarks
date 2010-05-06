@@ -22,29 +22,29 @@ clean:
 
 install: all
 	@install -d $(DESTDIR)/usr/bin
-	@if [ -e dhrystone/Debug/dhrystone ] ; then \
-		install dhrystone/Debug/dhrystone $(DESTDIR)/usr/bin/ ; \
+	@if [ -e dhrystone/Release/dhrystone ] ; then \
+		install dhrystone/Release/dhrystone $(DESTDIR)/usr/bin/ ; \
 	else \
-		if [ -e dhrystone/Release/dhrystone ] ; then \
-			install dhrystone/Release/dhrystone $(DESTDIR)/usr/bin/ ; \
+		if [ -e dhrystone/Debug/dhrystone ] ; then \
+			install dhrystone/Debug/dhrystone $(DESTDIR)/usr/bin/ ; \
 		else \
 			echo "Nothing found to install!" ; \
 		fi \
 	fi
-	@if [ -e whetstone/Debug/whetstone ] ; then \
-		install whetstone/Debug/whetstone $(DESTDIR)/usr/bin/ ; \
+	@if [ -e whetstone/Release/whetstone ] ; then \
+		install whetstone/Release/whetstone $(DESTDIR)/usr/bin/ ; \
 	else \
-		if [ -e whetstone/Release/whetstone ] ; then \
-			install whetstone/Release/whetstone $(DESTDIR)/usr/bin/ ; \
+		if [ -e whetstone/Debug/whetstone ] ; then \
+			install whetstone/Debug/whetstone $(DESTDIR)/usr/bin/ ; \
 		else \
 			echo "Nothing found to install!" ; \
 		fi \
 	fi
-	@if [ -e linpack/Debug/linpack ] ; then \
-		install linpack/Debug/linpack $(DESTDIR)/usr/bin/ ; \
+	@if [ -e linpack/Release/linpack ] ; then \
+		install linpack/Release/linpack $(DESTDIR)/usr/bin/ ; \
 	else \
-		if [ -e linpack/Release/linpack ] ; then \
-			install linpack/Release/linpack $(DESTDIR)/usr/bin/ ; \
+		if [ -e linpack/Debug/linpack ] ; then \
+			install linpack/Debug/linpack $(DESTDIR)/usr/bin/ ; \
 		else \
 			echo "Nothing found to install!" ; \
 		fi \
