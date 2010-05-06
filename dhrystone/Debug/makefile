@@ -34,7 +34,7 @@ all: dhrystone secondary-outputs
 dhrystone: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Sourcery Linux GCC C Linker'
-	$(CROSS_COMPILE)gcc -Wl,-Map,dhrystone.map -mcpu=cortex-a8 -o"dhrystone" $(OBJS) $(USER_OBJS) $(LIBS)
+	$(CROSS_COMPILE)gcc -Wl,-Map,dhrystone.map -mcpu=cortex-a8 -g3 -gdwarf-2 -o"dhrystone" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

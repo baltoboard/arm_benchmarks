@@ -31,7 +31,7 @@
 <inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.assembler.base.input.1376064355" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.assembler.base.input"/>
 </tool>
 <tool command="$(CROSS_COMPILE)gcc" id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.elf.c.compiler.debug.256928216" name="ARM Sourcery Linux GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.elf.c.compiler.debug">
-<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.978328460" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.most" valueType="enumerated"/>
+<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.978328460" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1727084314" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="UNROLL"/>
 <listOptionValue builtIn="false" value="SP"/>
@@ -1310,7 +1310,7 @@
 <inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.assembler.base.input.293462016" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.assembler.base.input"/>
 </tool>
 <tool command="$(CROSS_COMPILE)gcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.elf.c.compiler.release.1027902985" name="ARM Sourcery Linux GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.linux.elf.c.compiler.release">
-<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.1005119612" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.size" valueType="enumerated"/>
+<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.1005119612" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.most" valueType="enumerated"/>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.flags.273330293" name="Other optimization flags" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.flags" value="-mfloat-abi=softfp -march=armv7-a" valueType="string"/>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.warnings.allwarn.285988357" name="All warnings (-Wall)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.warnings.allwarn" value="false" valueType="boolean"/>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.414203778" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
