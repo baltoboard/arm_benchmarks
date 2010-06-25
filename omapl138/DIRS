@@ -1,7 +1,0 @@
-DIRS :=
-
-DIRS := dhrystone
-DIRS += whetstone
-DIRS += linpack
-
-DESTDIR ?=
