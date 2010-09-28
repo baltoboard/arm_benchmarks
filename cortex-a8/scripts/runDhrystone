@@ -1,3 +1,4 @@
+#!/bin/sh
 # Module: runDhrystone
 #
 # Description: This script is used to list the memory partition information
@@ -38,5 +39,11 @@ echo ""
 echo "Dhrystone running ..."
 echo ""
 echo "Execution time 10 seconds or longer depending on your CPU clock speed"
+if test -e /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq; then
 CPUFREQ=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq`
-dhrystone_static 25000000 $CPUFREQ
+fi
+if test -e /usr/bin/dhrystone_static; then
+dhrystone_static 30000000 $CPUFREQ
+else
+dhrystone 10000000 $CPUFREQ
+fi
