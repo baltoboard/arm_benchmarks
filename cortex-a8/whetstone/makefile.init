@@ -1,4 +1,4 @@
--include ../../../../../Rules.make
+-include ../../../../Rules.make
 
 CROSS_COMPILE ?= 
 
