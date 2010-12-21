@@ -1,6 +1,6 @@
--include ../../../../../Rules.make
+-include ../../../../Rules.make
 
-CROSS_COMPILE ?= 
+CROSS_COMPILE ?= arm-none-linux-gnueabi-
 
 #ifeq("$(CROSS_COMPILE)", "")
 #	@echo "missing toolchain path"

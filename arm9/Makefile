@@ -1,5 +1,5 @@
 -include DIRS
--include ../../../Rules.make
+-include ../../Rules.make
 
 all: debug release
 
