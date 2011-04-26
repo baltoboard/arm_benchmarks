@@ -91,7 +91,7 @@ You must specify one of -DROLL or -DUNROLL to compile correctly.
 
 static REAL time[9][9];
 
-main ()
+int main (void)
 {
 	static REAL aa[200][200],a[200][201],b[200],x[200];
 	REAL cray,ops,total,norma,normx;
@@ -291,6 +291,8 @@ main ()
 	print_time(7);
 	fprintf(stderr,ROLLING);fprintf(stderr,PREC);
 	fprintf(stderr," Precision %5d Kflops ; %d Reps \n",kflops,NTIMES);
+ 
+  return(0);
 }
      
 /*----------------------*/ 

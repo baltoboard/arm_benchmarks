@@ -74,7 +74,7 @@ int             CpuFreq=0; // in KHz
 /* end of variables for time measurement */
 
 
-main (int argc, char **argv)
+int main (int argc, char **argv)
 /*****/
 
   /* main program, corresponds to procedures        */
@@ -307,6 +307,7 @@ main (int argc, char **argv)
     }
   }
   
+  return(0);
 }
 
 
