@@ -1,14 +1,6 @@
 -include DIRS
 -include ../../Rules.make
 
-ARCH= cortex-a8
-ifeq (${PLATFORM},am180x-evm)
-ARCH= arm9
-endif
-ifeq (${PLATFORM},am181x-evm)
-ARCH= arm9
-endif
-
 all: debug release
 
 debug:
