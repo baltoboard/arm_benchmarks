@@ -20,6 +20,7 @@ clean:
                 make -C $(ARCH)/$$dir/Debug clean; \
 	done
 	@rm -f `find . -name "*.map"`
+	@rm -f `find . -name "*.lst"`
 
 install:
 	@install -d $(DESTDIR)/usr/bin
