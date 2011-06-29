@@ -42,8 +42,5 @@ echo "Execution time 10 seconds or longer depending on your CPU clock speed"
 if test -e /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq; then
 CPUFREQ=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq`
 fi
-if test -e /usr/bin/dhrystone_static; then
-dhrystone_static 6000000 $CPUFREQ
-else
 dhrystone 6000000 $CPUFREQ
-fi
+echo ""
