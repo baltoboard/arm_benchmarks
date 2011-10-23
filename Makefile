@@ -5,22 +5,20 @@ all: debug release
 
 debug:
 	for dir in $(DIRS); do \
-                make -C $(ARCH)/$$dir/Debug; \
+                make -C $(ARCH)/$$dir debug; \
 	done
 	echo ${ARCH}
 
 release:
 	for dir in $(DIRS); do \
-                make -C $(ARCH)/$$dir/Release; \
+                make -C $(ARCH)/$$dir release; \
 	done
 
 clean:
 	for dir in $(DIRS); do \
-                make -C $(ARCH)/$$dir/Release clean; \
-                make -C $(ARCH)/$$dir/Debug clean; \
+                make -C $(ARCH)/$$dir release clean; \
+                make -C $(ARCH)/$$dir debug clean; \
 	done
-	@rm -f `find . -name "*.map"`
-	@rm -f `find . -name "*.lst"`
 
 install:
 	@install -d $(DESTDIR)/usr/bin

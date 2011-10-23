@@ -27,6 +27,3 @@ To Build Release only: make release
 
 To Install Debug only: make install_debug
 
-Note the makefiles located in the respective Debug and Release directories are generated using the Eclipse IDE
-and should not be modified if the user expects to build from within the Eclipse environment.
-
