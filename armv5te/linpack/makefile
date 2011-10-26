@@ -70,11 +70,14 @@ ALL_CFLAGS := $(INCLUDES)                  \
               -O3                          \
               -march=armv5te               \
               -mtune=arm926ej-s            \
+              -fmessage-length=0           \
               -c                           \
               $(CFLAGS)
 
 LDFLAGS :=    -march=armv5te               \
               -mtune=arm926ej-s            \
+              -Wl,-O1                      \
+              -Wl,--hash-style=gnu         \
               -lm
 
 #   ----------------------------------------------------------------------------

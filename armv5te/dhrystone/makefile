@@ -75,6 +75,7 @@ ALL_CFLAGS := $(INCLUDES)                  \
 
 LDFLAGS :=    -march=armv5te               \
               -mtune=arm926ej-s            \
+              -Wl,--hash-style=gnu         \
               -Wl,-O1
 
 #   ----------------------------------------------------------------------------
