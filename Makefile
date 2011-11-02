@@ -16,8 +16,7 @@ release:
 
 clean:
 	for dir in $(DIRS); do \
-                make -C $(ARCH)/$$dir release clean; \
-                make -C $(ARCH)/$$dir debug clean; \
+                make -C $(ARCH)/$$dir clean; \
 	done
 
 install:
