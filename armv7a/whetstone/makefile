@@ -57,6 +57,7 @@ OBJDIR_R := Release
 BINDIR_R := $(OBJDIR_R)
 LIBS_R := $(LIBS)
 OBJS_R := $(SRCS:%.c=$(OBJDIR_R)/%.o)
+ALL_RELEASE := -O3
 
 #   ----------------------------------------------------------------------------
 #   Compiler include directories 
@@ -67,7 +68,6 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -O3                          \
               -march=armv7-a               \
               -mtune=cortex-a8             \
               -mfloat-abi=softfp           \
@@ -118,7 +118,7 @@ $(BINDIR_R)/$(BIN): $(OBJS_R)
 	$(CC) -o $@ $(OBJS_R) $(LIBS_R) $(LDFLAGS) -Wl,-Map,$(BINDIR_R)/$(NAME).map
 
 $(OBJDIR_R)/%.o : %.c $(HDRS)
-	$(CC) $(DEFS) $(ALL_CFLAGS) -o$@ $<
+	$(CC) $(DEFS) $(ALL_RELEASE) $(ALL_CFLAGS) -o$@ $<
 
 .PHONY: clean
 clean:
