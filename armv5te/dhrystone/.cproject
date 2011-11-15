@@ -33,6 +33,13 @@
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.10951792" languageId="com.ti.ccstudio.core.TICMDLanguage" languageName="TI Linker Command" sourceContentType="com.ti.common.core.linkerCommandFile,com.ti.common.core.linkerCommandFile2" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.752754033" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1805097013" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1605734610" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="TIME"/>
+								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1716569330" languageId="com.ti.ccstudio.core.TIGCCLanguage" languageName="TI GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 						</toolChain>
@@ -71,6 +78,13 @@
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.279334101" languageId="com.ti.ccstudio.core.TICMDLanguage" languageName="TI Linker Command" sourceContentType="com.ti.common.core.linkerCommandFile,com.ti.common.core.linkerCommandFile2" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.497700629" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1732738579" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.179279206" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="TIME"/>
+								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1481427685" languageId="com.ti.ccstudio.core.TIGCCLanguage" languageName="TI GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 						</toolChain>
@@ -83,14 +97,20 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="dhrystone.null.1731490859" name="dhrystone"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="0.527593830">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="1">
 		<resource resourceType="PROJECT" workspacePath="/dhrystone"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="0.527593830.1337711727">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.527593830">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.527593830.1636476082">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
 </cproject>

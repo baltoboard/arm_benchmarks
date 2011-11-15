@@ -20,7 +20,11 @@
 					<folderInfo id="0.348955383.1167891326." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.460193004" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.460193004.1652455405" name=""/>
-							<builder id="org.eclipse.cdt.build.core.settings.default.builder.2020310907" incrementalBuildTarget="debug" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<builder id="org.eclipse.cdt.build.core.settings.default.builder.2020310907" incrementalBuildTarget="debug" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH" kind="outputPath" name="Debug"/>
+								</outputEntries>
+							</builder>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.53760075" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.905914954" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1869723695" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
@@ -32,6 +36,14 @@
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1297223104" languageId="com.ti.ccstudio.core.TICMDLanguage" languageName="TI Linker Command" sourceContentType="com.ti.common.core.linkerCommandFile,com.ti.common.core.linkerCommandFile2" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1901028359" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1797844529" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1886085122" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="SP"/>
+									<listOptionValue builtIn="false" value="UNROLL"/>
+								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.2066156017" languageId="com.ti.ccstudio.core.TIGCCLanguage" languageName="TI GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 						</toolChain>
@@ -57,7 +69,11 @@
 					<folderInfo id="0.348955383.1375752924." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.460474816" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.460474816.1138144527" name=""/>
-							<builder id="org.eclipse.cdt.build.core.settings.default.builder.977890287" incrementalBuildTarget="release" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<builder id="org.eclipse.cdt.build.core.settings.default.builder.977890287" incrementalBuildTarget="release" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH" kind="outputPath" name="Release"/>
+								</outputEntries>
+							</builder>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.1913743804" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.386075517" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1290753312" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
@@ -69,6 +85,14 @@
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1881997392" languageId="com.ti.ccstudio.core.TICMDLanguage" languageName="TI Linker Command" sourceContentType="com.ti.common.core.linkerCommandFile,com.ti.common.core.linkerCommandFile2" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1760726128" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.521894141" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
+									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1458407075" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="SP"/>
+									<listOptionValue builtIn="false" value="UNROLL"/>
+								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.818122184" languageId="com.ti.ccstudio.core.TIGCCLanguage" languageName="TI GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 						</toolChain>
@@ -81,13 +105,19 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="linpack.null.1819670612" name="linpack"/>
 	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/linpack"/>
+	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		<scannerConfigBuildInfo instanceId="0.348955383">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-	</storageModule>
-	<storageModule moduleId="refreshScope" versionNumber="1">
-		<resource resourceType="PROJECT" workspacePath="/linpack"/>
+		<scannerConfigBuildInfo instanceId="0.348955383.1375752924">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.348955383.1167891326">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>
