@@ -101,6 +101,7 @@ $(BINDIR_D)/$(BIN): $(OBJS_D)
 	$(CC) -o $@ $(OBJS_D) $(LIBS_D) $(LDFLAGS)  -Wl,-Map,$(BINDIR_D)/$(NAME).map
 
 $(OBJDIR_D)/%.o : %.c $(HDRS)
+	@mkdir -p $(OBJDIR_D)
 	$(CC) $(ALL_DEBUG) $(DEFS) $(ALL_CFLAGS) -o$@ $<
 
 #   ----------------------------------------------------------------------------
@@ -114,10 +115,11 @@ $(BINDIR_R)/$(BIN): $(OBJS_R)
 	$(CC) -o $@ $(OBJS_R) $(LIBS_R) $(LDFLAGS) -Wl,-Map,$(BINDIR_R)/$(NAME).map
 
 $(OBJDIR_R)/%.o : %.c $(HDRS)
+	@mkdir -p $(OBJDIR_R)
 	$(CC) $(DEFS) $(ALL_RELEASE) $(ALL_CFLAGS) -o$@ $<
 
 .PHONY: clean
 clean:
-	@rm -f $(OBJDIR_D)/*
-	@rm -f $(OBJDIR_R)/*
+	@rm -rf $(OBJDIR_D)
+	@rm -rf $(OBJDIR_R)
 
