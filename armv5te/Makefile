@@ -38,7 +38,7 @@ install:
 	else \
 		echo "linpack release version not built - nothing to install!" ; \
 	fi
-	@install $scripts/* $(DESTDIR)/usr/bin
+	@install scripts/* $(DESTDIR)/usr/bin
 
 install_debug:
 	@install -d $(DESTDIR)/usr/bin
