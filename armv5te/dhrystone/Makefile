@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for whetstone for arm926ej-s (Debug and Release versions)
+#  @desc   Makefile for dhrystone for arm926ej-s (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 #   ----------------------------------------------------------------------------
 #   Included defined variables
 #   ----------------------------------------------------------------------------
--include ../../../../Rules.make
+-include ../../../Rules.make
 
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
@@ -33,12 +33,12 @@ CC := $(CROSS_COMPILE)gcc
 #   ----------------------------------------------------------------------------
 #   General options, sources and libraries
 #   ----------------------------------------------------------------------------
-NAME := whetstone
-SRCS := whetstone.c
-HDRS :=
+NAME := dhrystone
+SRCS := dhry_1.c dhry_2.c
+HDRS := dhry.h
 OBJS :=
 DEBUG :=
-BIN := whetstone
+BIN := dhrystone
 
 
 #   ----------------------------------------------------------------------------
@@ -70,21 +70,18 @@ INCLUDES :=
 ALL_CFLAGS := $(INCLUDES)                  \
               -march=armv5te               \
               -mtune=arm926ej-s            \
-              -fmessage-length=0           \
-              -Wall                        \
               -c                           \
               $(CFLAGS)
 
 LDFLAGS :=    -march=armv5te               \
               -mtune=arm926ej-s            \
-              -Wl,-O1                      \
               -Wl,--hash-style=gnu         \
-              -lm
+              -Wl,-O1
 
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 
 #   ----------------------------------------------------------------------------
-DEFS :=
+DEFS := -DTIME
 
 #   ----------------------------------------------------------------------------
 #   Compiler and Linker procedure

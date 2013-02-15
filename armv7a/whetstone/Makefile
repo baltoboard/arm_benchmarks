@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for linpack for arm926ej-s (Debug and Release versions)
+#  @desc   Makefile for whetstone for cortex-a8 (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 #   ----------------------------------------------------------------------------
 #   Included defined variables
 #   ----------------------------------------------------------------------------
--include ../../../../Rules.make
+-include ../../../Rules.make
 
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
@@ -33,12 +33,12 @@ CC := $(CROSS_COMPILE)gcc
 #   ----------------------------------------------------------------------------
 #   General options, sources and libraries
 #   ----------------------------------------------------------------------------
-NAME := linpack
-SRCS := linpack.c
+NAME := whetstone
+SRCS := whetstone.c
 HDRS :=
 OBJS :=
 DEBUG :=
-BIN := linpack
+BIN := whetstone
 
 
 #   ----------------------------------------------------------------------------
@@ -68,14 +68,16 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -march=armv5te               \
-              -mtune=arm926ej-s            \
+              -march=armv7-a               \
+              -mtune=cortex-a8             \
+              -mfloat-abi=softfp           \
               -fmessage-length=0           \
+              -Wall                        \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -march=armv5te               \
-              -mtune=arm926ej-s            \
+LDFLAGS :=    -march=armv7-a               \
+              -mtune=cortex-a8             \
               -Wl,-O1                      \
               -Wl,--hash-style=gnu         \
               -lm
@@ -83,8 +85,7 @@ LDFLAGS :=    -march=armv5te               \
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 
 #   ----------------------------------------------------------------------------
-DEFS := -DUNROLL                          \
-        -DSP
+DEFS :=
 
 #   ----------------------------------------------------------------------------
 #   Compiler and Linker procedure

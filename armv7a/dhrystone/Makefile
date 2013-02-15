@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for linpack for cortex-a8 (Debug and Release versions)
+#  @desc   Makefile for dhrystone for cortex-a8 (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 #   ----------------------------------------------------------------------------
 #   Included defined variables
 #   ----------------------------------------------------------------------------
--include ../../../../Rules.make
+-include ../../../Rules.make
 
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
@@ -33,12 +33,12 @@ CC := $(CROSS_COMPILE)gcc
 #   ----------------------------------------------------------------------------
 #   General options, sources and libraries
 #   ----------------------------------------------------------------------------
-NAME := linpack
-SRCS := linpack.c
-HDRS :=
+NAME := dhrystone
+SRCS := dhry_1.c dhry_2.c
+HDRS := dhry.h
 OBJS :=
 DEBUG :=
-BIN := linpack
+BIN := dhrystone
 
 
 #   ----------------------------------------------------------------------------
@@ -70,22 +70,18 @@ INCLUDES :=
 ALL_CFLAGS := $(INCLUDES)                  \
               -march=armv7-a               \
               -mtune=cortex-a8             \
-              -mfloat-abi=softfp           \
-              -fmessage-length=0           \
               -c                           \
               $(CFLAGS)
 
 LDFLAGS :=    -march=armv7-a               \
-              -mtune=cortex-a8             \
-              -Wl,-O1                      \
+              -mtune=cortex-a8,            \
               -Wl,--hash-style=gnu         \
-              -lm
+              -Wl,-O1                      \
 
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 
 #   ----------------------------------------------------------------------------
-DEFS := -DUNROLL                          \
-        -DSP
+DEFS := -DTIME
 
 #   ----------------------------------------------------------------------------
 #   Compiler and Linker procedure

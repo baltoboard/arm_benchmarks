@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for dhrystone for cortex-a8 (Debug and Release versions)
+#  @desc   Makefile for linpack for cortex-a8 (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 #   ----------------------------------------------------------------------------
 #   Included defined variables
 #   ----------------------------------------------------------------------------
--include ../../../../Rules.make
+-include ../../../Rules.make
 
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
@@ -33,12 +33,12 @@ CC := $(CROSS_COMPILE)gcc
 #   ----------------------------------------------------------------------------
 #   General options, sources and libraries
 #   ----------------------------------------------------------------------------
-NAME := dhrystone
-SRCS := dhry_1.c dhry_2.c
-HDRS := dhry.h
+NAME := linpack
+SRCS := linpack.c
+HDRS :=
 OBJS :=
 DEBUG :=
-BIN := dhrystone
+BIN := linpack
 
 
 #   ----------------------------------------------------------------------------
@@ -70,18 +70,22 @@ INCLUDES :=
 ALL_CFLAGS := $(INCLUDES)                  \
               -march=armv7-a               \
               -mtune=cortex-a8             \
+              -mfloat-abi=softfp           \
+              -fmessage-length=0           \
               -c                           \
               $(CFLAGS)
 
 LDFLAGS :=    -march=armv7-a               \
-              -mtune=cortex-a8,            \
-              -Wl,--hash-style=gnu         \
+              -mtune=cortex-a8             \
               -Wl,-O1                      \
+              -Wl,--hash-style=gnu         \
+              -lm
 
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 
 #   ----------------------------------------------------------------------------
-DEFS := -DTIME
+DEFS := -DUNROLL                          \
+        -DSP
 
 #   ----------------------------------------------------------------------------
 #   Compiler and Linker procedure
