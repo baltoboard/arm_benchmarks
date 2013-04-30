@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for linpack for cortex-a8 (Debug and Release versions)
+#  @desc   Makefile for linpack (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -21,8 +21,7 @@
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
 #   ----------------------------------------------------------------------------
-PLATFORM ?=
-ARCH ?=
+CFLAGS ?= -march=armv7-a -mtune=cortex-a8
 CROSS_COMPILE ?=
 
 #   ----------------------------------------------------------------------------
@@ -68,16 +67,11 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -march=armv7-a               \
-              -mtune=cortex-a8             \
-              -mfloat-abi=softfp           \
               -fmessage-length=0           \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -march=armv7-a               \
-              -mtune=cortex-a8             \
-              -Wl,-O1                      \
+LDFLAGS :=    -Wl,-O1                      \
               -Wl,--hash-style=gnu         \
               -lm
 

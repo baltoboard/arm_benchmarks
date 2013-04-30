@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for whetstone for cortex-a8 (Debug and Release versions)
+#  @desc   Makefile for whetstone (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -21,8 +21,7 @@
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
 #   ----------------------------------------------------------------------------
-PLATFORM ?=
-ARCH ?=
+CFLAGS ?= -march=armv7-a -mtune=cortex-a8
 CROSS_COMPILE ?=
 
 #   ----------------------------------------------------------------------------
@@ -68,17 +67,12 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -march=armv7-a               \
-              -mtune=cortex-a8             \
-              -mfloat-abi=softfp           \
               -fmessage-length=0           \
               -Wall                        \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -march=armv7-a               \
-              -mtune=cortex-a8             \
-              -Wl,-O1                      \
+LDFLAGS :=    -Wl,-O1                      \
               -Wl,--hash-style=gnu         \
               -lm
 

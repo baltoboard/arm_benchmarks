@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for dhrystone for cortex-a8 (Debug and Release versions)
+#  @desc   Makefile for dhrystone (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -21,8 +21,7 @@
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
 #   ----------------------------------------------------------------------------
-PLATFORM ?=
-ARCH ?=
+CFLAGS ?= -march=armv7-a -mtune=cortex-a8
 CROSS_COMPILE ?=
 
 #   ----------------------------------------------------------------------------
@@ -68,14 +67,10 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -march=armv7-a               \
-              -mtune=cortex-a8             \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -march=armv7-a               \
-              -mtune=cortex-a8,            \
-              -Wl,--hash-style=gnu         \
+LDFLAGS :=    -Wl,--hash-style=gnu         \
               -Wl,-O1                      \
 
 #   ----------------------------------------------------------------------------

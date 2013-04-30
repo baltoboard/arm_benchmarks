@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for dhrystone for arm926ej-s (Debug and Release versions)
+#  @desc   Makefile for dhrystone (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -21,8 +21,7 @@
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
 #   ----------------------------------------------------------------------------
-PLATFORM ?=
-ARCH ?=
+CFLAGS ?= -march=armv5te -mtune=arm926ej-s
 CROSS_COMPILE ?=
 
 #   ----------------------------------------------------------------------------
@@ -68,15 +67,11 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -march=armv5te               \
-              -mtune=arm926ej-s            \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -march=armv5te               \
-              -mtune=arm926ej-s            \
-              -Wl,--hash-style=gnu         \
-              -Wl,-O1
+LDFLAGS :=    -Wl,--hash-style=gnu         \
+              -Wl,-O1                      \
 
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 

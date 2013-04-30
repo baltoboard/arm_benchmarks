@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for whetstone for arm926ej-s (Debug and Release versions)
+#  @desc   Makefile for whetstone (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -21,8 +21,7 @@
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
 #   ----------------------------------------------------------------------------
-PLATFORM ?=
-ARCH ?=
+CFLAGS ?= -march=armv5te -mtune=arm926ej-s
 CROSS_COMPILE ?=
 
 #   ----------------------------------------------------------------------------
@@ -68,16 +67,12 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -march=armv5te               \
-              -mtune=arm926ej-s            \
               -fmessage-length=0           \
               -Wall                        \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -march=armv5te               \
-              -mtune=arm926ej-s            \
-              -Wl,-O1                      \
+LDFLAGS :=    -Wl,-O1                      \
               -Wl,--hash-style=gnu         \
               -lm
 
