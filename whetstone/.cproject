@@ -38,8 +38,8 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1608723022" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.840286991" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_TARGET_INCLUDE_DIR>" />
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_INCLUDE_DIR>"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1812050132" languageId="com.ti.ccstudio.core.TIGCCLanguage" languageName="TI GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -84,8 +84,8 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.599383459" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.747393986" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_TARGET_INCLUDE_DIR>" />
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_INCLUDE_DIR>"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1685318505" languageId="com.ti.ccstudio.core.TIGCCLanguage" languageName="TI GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>

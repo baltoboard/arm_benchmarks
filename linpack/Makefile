@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for dhrystone (Debug and Release versions)
+#  @desc   Makefile for linpack (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -21,7 +21,7 @@
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
 #   ----------------------------------------------------------------------------
-CFLAGS ?= -march=armv7-a -mtune=cortex-a8
+CFLAGS ?=
 CROSS_COMPILE ?=
 
 #   ----------------------------------------------------------------------------
@@ -32,12 +32,12 @@ CC := $(CROSS_COMPILE)gcc
 #   ----------------------------------------------------------------------------
 #   General options, sources and libraries
 #   ----------------------------------------------------------------------------
-NAME := dhrystone
-SRCS := dhry_1.c dhry_2.c
-HDRS := dhry.h
+NAME := linpack
+SRCS := linpack.c
+HDRS :=
 OBJS :=
 DEBUG :=
-BIN := dhrystone
+BIN := linpack
 
 
 #   ----------------------------------------------------------------------------
@@ -67,16 +67,19 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
+              -fmessage-length=0           \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -Wl,--hash-style=gnu         \
-              -Wl,-O1                      \
+LDFLAGS :=    -Wl,-O1                      \
+              -Wl,--hash-style=gnu         \
+              -lm
 
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 
 #   ----------------------------------------------------------------------------
-DEFS := -DTIME
+DEFS := -DUNROLL                          \
+        -DSP
 
 #   ----------------------------------------------------------------------------
 #   Compiler and Linker procedure

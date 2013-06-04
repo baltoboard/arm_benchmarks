@@ -38,8 +38,8 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.10173995" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.469144721" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_TARGET_INCLUDE_DIR>" />
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_INCLUDE_DIR>"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1760758922" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="TIME"/>
@@ -87,8 +87,8 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1558009345" name="TI GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.488023349" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/arm-arago-linux-gnueabi/usr/include"/>
-									<listOptionValue builtIn="false" value="../../../../../linux-devkit/lib/gcc/arm-arago-linux-gnueabi/4.5.3/include"/>
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_TARGET_INCLUDE_DIR>" />
+									<listOptionValue builtIn="false" value="../../../../<TOOLCHAIN_INCLUDE_DIR>"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1404063137" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="TIME"/>

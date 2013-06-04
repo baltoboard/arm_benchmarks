@@ -3,7 +3,7 @@
 #
 #  @path   
 #
-#  @desc   Makefile for linpack (Debug and Release versions)
+#  @desc   Makefile for dhrystone (Debug and Release versions)
 #
 #  @ver    1.10
 #   ----------------------------------------------------------------------------
@@ -21,7 +21,7 @@
 #   ----------------------------------------------------------------------------
 #   Variables passed in externally
 #   ----------------------------------------------------------------------------
-CFLAGS ?= -march=armv5te -mtune=arm926ej-s
+CFLAGS ?=
 CROSS_COMPILE ?=
 
 #   ----------------------------------------------------------------------------
@@ -32,12 +32,12 @@ CC := $(CROSS_COMPILE)gcc
 #   ----------------------------------------------------------------------------
 #   General options, sources and libraries
 #   ----------------------------------------------------------------------------
-NAME := linpack
-SRCS := linpack.c
-HDRS :=
+NAME := dhrystone
+SRCS := dhry_1.c dhry_2.c
+HDRS := dhry.h
 OBJS :=
 DEBUG :=
-BIN := linpack
+BIN := dhrystone
 
 
 #   ----------------------------------------------------------------------------
@@ -67,19 +67,16 @@ INCLUDES :=
 #   All compiler options to be passed to the command line
 #   ----------------------------------------------------------------------------
 ALL_CFLAGS := $(INCLUDES)                  \
-              -fmessage-length=0           \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -Wl,-O1                      \
-              -Wl,--hash-style=gnu         \
-              -lm
+LDFLAGS :=    -Wl,--hash-style=gnu         \
+              -Wl,-O1                      \
 
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 
 #   ----------------------------------------------------------------------------
-DEFS := -DUNROLL                          \
-        -DSP
+DEFS := -DTIME
 
 #   ----------------------------------------------------------------------------
 #   Compiler and Linker procedure
