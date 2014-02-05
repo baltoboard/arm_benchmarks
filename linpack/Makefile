@@ -121,3 +121,35 @@ clean:
 	@rm -rf $(OBJDIR_D)
 	@rm -rf $(OBJDIR_R)
 
+.PHONY: install
+install:
+	@if [ ! -d $(DESTDIR) ] ; then \
+		echo "The extracted target filesystem directory doesn't exist."; \
+		echo "Please run setup.sh"; \
+		exit 1; \
+	fi
+	@install -d $(DESTDIR)/usr/bin
+	@if [ -e Release/linpack ] ; then \
+		install Release/linpack $(DESTDIR)/usr/bin/ ; \
+		echo "linpack release version installed."; \
+	else \
+		echo "linpack release version not built - nothing to install!"; \
+	fi
+	@install ../scripts/runLinpack $(DESTDIR)/usr/bin
+
+.PHONY: install_debug
+install_debug:
+	@if [ ! -d $(DESTDIR) ] ; then \
+		echo "The extracted target filesystem directory doesn't exist."; \
+		echo "Please run setup.sh"; \
+		exit 1; \
+	fi
+	@install -d $(DESTDIR)/usr/bin
+	@if [ -e Debug/linpack ] ; then \
+		install Debug/linpack $(DESTDIR)/usr/bin/ ; \
+		echo "linpack debug version installed."; \
+		echo "NOTE: DEBUG VERSION WILL NOT YIELD MEANINGFUL BENCHMARK RESULTS."; \
+	else \
+		echo "linpack debug version not built - nothing to install!"; \
+	fi
+	@install ../scripts/runLinpack $(DESTDIR)/usr/bin

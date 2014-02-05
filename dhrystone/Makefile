@@ -118,3 +118,35 @@ clean:
 	@rm -rf $(OBJDIR_D)
 	@rm -rf $(OBJDIR_R)
 
+.PHONY: install
+install:
+	@if [ ! -d $(DESTDIR) ] ; then \
+		echo "The extracted target filesystem directory doesn't exist."; \
+		echo "Please run setup.sh"; \
+		exit 1; \
+	fi
+	@install -d $(DESTDIR)/usr/bin
+	@if [ -e Release/dhrystone ] ; then \
+		install Release/dhrystone $(DESTDIR)/usr/bin/ ; \
+		echo "dhrystone release version installed."; \
+	else \
+		echo "dhrystone release version not built - nothing to install!"; \
+	fi
+	@install ../scripts/runDhrystone $(DESTDIR)/usr/bin
+
+.PHONY: install_debug
+install_debug:
+	@if [ ! -d $(DESTDIR) ] ; then \
+		echo "The extracted target filesystem directory doesn't exist."; \
+		echo "Please run setup.sh"; \
+		exit 1; \
+	fi
+	@install -d $(DESTDIR)/usr/bin
+	@if [ -e Debug/dhrystone ] ; then \
+		install Debug/dhrystone $(DESTDIR)/usr/bin/ ; \
+		echo "dhrystone debug version installed."; \
+		echo "NOTE: DEBUG VERSION WILL NOT YIELD MEANINGFUL BENCHMARK RESULTS."; \
+	else \
+		echo "dhrystone debug version not built - nothing to install!"; \
+	fi
+	@install ../scripts/runDhrystone $(DESTDIR)/usr/bin
