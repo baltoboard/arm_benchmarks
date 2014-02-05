@@ -125,7 +125,7 @@ clean:
 install:
 	@if [ ! -d $(DESTDIR) ] ; then \
 		echo "The extracted target filesystem directory doesn't exist."; \
-		echo "Please run setup.sh"; \
+		echo "Please run setup.sh in the SDK's root directory and then try again."; \
 		exit 1; \
 	fi
 	@install -d $(DESTDIR)/usr/bin
@@ -141,7 +141,7 @@ install:
 install_debug:
 	@if [ ! -d $(DESTDIR) ] ; then \
 		echo "The extracted target filesystem directory doesn't exist."; \
-		echo "Please run setup.sh"; \
+		echo "Please run setup.sh in the SDK's root directory and then try again."; \
 		exit 1; \
 	fi
 	@install -d $(DESTDIR)/usr/bin
