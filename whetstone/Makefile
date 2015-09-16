@@ -72,9 +72,9 @@ ALL_CFLAGS := $(INCLUDES)                  \
               -c                           \
               $(CFLAGS)
 
-LDFLAGS :=    -Wl,-O1                      \
-              -Wl,--hash-style=gnu         \
-              -lm
+ALL_LDFLAGS := -Wl,-O1                     \
+               -Wl,--hash-style=gnu        \
+               -lm $(LDFLAGS)
 
 #   ----------------------------------------------------------------------------
 #   Compiler symbol definitions 
@@ -96,7 +96,7 @@ debug: $(BINDIR_D)/$(BIN)
 
 $(BINDIR_D)/$(BIN): $(OBJS_D)
 	@echo Compiling Debug...
-	$(CC) -o $@ $(OBJS_D) $(LIBS_D) $(LDFLAGS)  -Wl,-Map,$(BINDIR_D)/$(NAME).map
+	$(CC) -o $@ $(OBJS_D) $(LIBS_D) $(ALL_LDFLAGS)  -Wl,-Map,$(BINDIR_D)/$(NAME).map
 
 $(OBJDIR_D)/%.o : %.c $(HDRS)
 	@mkdir -p $(OBJDIR_D)
@@ -110,7 +110,7 @@ release: $(BINDIR_R)/$(BIN)
 
 $(BINDIR_R)/$(BIN): $(OBJS_R)
 	@echo Compiling Release...
-	$(CC) -o $@ $(OBJS_R) $(LIBS_R) $(LDFLAGS) -Wl,-Map,$(BINDIR_R)/$(NAME).map
+	$(CC) -o $@ $(OBJS_R) $(LIBS_R) $(ALL_LDFLAGS) -Wl,-Map,$(BINDIR_R)/$(NAME).map
 
 $(OBJDIR_R)/%.o : %.c $(HDRS)
 	@mkdir -p $(OBJDIR_R)
