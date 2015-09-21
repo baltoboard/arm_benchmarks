@@ -43,7 +43,7 @@ if test -e /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq; then
 CPUFREQ=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq`
 else if test -e /proc/cpuinfo; then
         a=`cat /proc/cpuinfo | grep Bogo | awk '{print $3}'`
-        b=`echo "($a+5)/10*10" | bc`
+        b=$(((${a%.*} + 5) / 10 * 10))
         let CPUFREQ=b*1000
      fi
 fi
